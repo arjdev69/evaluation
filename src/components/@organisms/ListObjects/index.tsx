@@ -1,7 +1,11 @@
 import React from 'react';
 
 import {ScrollView} from 'react-native-gesture-handler';
-import {Box, ItemClick} from 'components';
+
+import {Box, ItemClick, Loading} from 'components';
+
+import {styles} from './styles';
+import {COLORS} from 'styles';
 
 export interface Props {
   data: any;
@@ -14,6 +18,13 @@ const ListObjects: React.FC<Props> = (_props) => {
   return (
     <Box styles={{}}>
       <ScrollView>
+        {_props.loading ? (
+          <Loading
+            size={'large'}
+            color={COLORS.primary}
+            styles={styles.loading}
+          />
+        ) : null}
         {_props.data.map(
           (_item: any, _idx: string | number | null | undefined) => (
             <ItemClick

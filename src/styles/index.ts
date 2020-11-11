@@ -39,7 +39,7 @@ export const COLORS = {
 export const SIZES = {
   titleMenu: 20,
   titleMenuSpacing: 4,
-  heightMenuMain: 14,
+  heightMenuMain: 8,
   font: 24,
   bdRadius: 8,
 };

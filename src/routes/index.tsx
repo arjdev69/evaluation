@@ -4,13 +4,9 @@ import * as UI from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {COLORS, SIZES, HP} from 'styles';
-
-//import {styles} from './styles';
-
-//import {MONEY} from 'utils/images';
-
 import {Home} from 'views';
+
+import {COLORS, SIZES, HP} from 'styles';
 
 const Stack = createStackNavigator();
 

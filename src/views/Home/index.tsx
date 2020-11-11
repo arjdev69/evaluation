@@ -5,14 +5,14 @@ import {getListTasks} from 'store/modules/Tasks/actions';
 
 import {ListItems} from 'templates';
 
-const Home: React.FC = () => {
+const Home: React.FC = ({navigation}) => {
   const dispatch = useDispatch();
 
   const {loading, tasks} = useSelector((state: any) => state.Tasks);
 
   useEffect(() => {
     dispatch(getListTasks());
-  });
+  }, [dispatch]);
 
   const COLUMNS = {
     key: 'id',
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
       loading={loading}
       columns={COLUMNS}
       fnCallback={(_item: any) => {
-        console.log(_item);
+        navigation.push('DetailProduct');
       }}
     />
   );
