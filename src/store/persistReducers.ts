@@ -4,9 +4,8 @@ import {persistReducer} from 'redux-persist';
 export default (reducers: any) => {
   const persistedReducer = persistReducer(
     {
-      key: 'GetMoney',
+      key: 'Evaluation',
       storage: AsyncStorage,
-      whitelist: ['Calculator'],
     },
     reducers,
   );

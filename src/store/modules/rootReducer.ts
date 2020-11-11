@@ -2,11 +2,9 @@ import {combineReducers} from 'redux';
 
 //import messages from './messages/reducer';
 import Modal from './Modal/reducer';
-import Calculator from './Calculator/reducer';
-import Machine from './Machines/reducer';
+import Task from './Tasks/reducer';
 
 export default combineReducers({
-  Calculator: Calculator,
+  Tasks: Task,
   Modal: Modal,
-  machine: Machine,
 });

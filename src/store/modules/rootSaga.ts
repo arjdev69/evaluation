@@ -1,7 +1,7 @@
 import {all} from 'redux-saga/effects';
 
-import machines from './Machines/sagas';
+import tasks from './Tasks/sagas';
 
 export default function* rootSaga() {
-  return yield all([machines]);
+  return yield all([tasks]);
 }

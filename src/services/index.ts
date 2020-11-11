@@ -1,13 +1,8 @@
 import axios from 'axios';
-import {Platform} from 'react-native';
+import {URL} from 'utils/Constants';
 
 const api = axios.create({
-  baseURL:
-    Platform.OS === 'ios'
-      ? 'https://api.whatsapp.com'
-      : 'https://api.whatsapp.com',
+  baseURL: URL.main,
 });
 
 export default api;
-
-//https://api.whatsapp.com/send? phone=55071996431175 & text=fala%20manoel

@@ -1,4 +1,4 @@
-import {lighten} from 'polished';
+import {darken, lighten} from 'polished';
 import {StyleSheet} from 'react-native';
 
 import styled from 'styled-components/native';
@@ -8,17 +8,8 @@ import {COLORS, HP, SIZES, WP} from 'styles';
 export const Container = styled.View``;
 
 export const styles = StyleSheet.create({
-  box: {
-    backgroundColor: COLORS.lightColor,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 1,
-    width: WP('80%'),
-    top: HP('10%'),
-    borderRadius: SIZES.bdRadius,
-  },
   boxListItem: {
-    width: '100%',
+    width: WP('100%'),
     padding: 10,
     justifyContent: 'flex-start',
   },
@@ -27,12 +18,14 @@ export const styles = StyleSheet.create({
     borderRadius: SIZES.bdRadius,
     justifyContent: 'flex-start',
     padding: 8,
+    borderWidth: 0.5,
+    borderColor: lighten(0.1, COLORS.darkColor),
   },
   labelBtn: {
-    padding: 0,
-    marginLeft: 40,
     flex: 0,
-    textAlign: 'left',
+    fontSize: 25,
+    textAlign: 'center',
+    color: COLORS.primary,
   },
   iconBtn: {
     height: 32,

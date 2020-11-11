@@ -16,7 +16,7 @@ export interface Props {
 
 const ItemClick: React.FC<Props> = (_props) => {
   return (
-    <Box styles={[styles.box, _props.styles]}>
+    <Box styles={[styles.boxListItem, _props.styles]}>
       {_props.children ? (
         _props.children
       ) : (
@@ -25,7 +25,9 @@ const ItemClick: React.FC<Props> = (_props) => {
           activeOpacity={0.6}
           onPress={_props.fnCallback}
           style={[styles.btn, _props.stylesBtn]}>
-          <Label style={_props.stylesLabel}>{_props.label}</Label>
+          <Label style={[styles.labelBtn, _props.stylesLabel]}>
+            {_props.label}
+          </Label>
         </ButttonCustom>
       )}
     </Box>

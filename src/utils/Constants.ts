@@ -11,8 +11,5 @@ export const MODAL_ITEMS_LABEL = {
 };
 
 export const URL = {
-  machines:
-    'https://raw.githubusercontent.com/Box-Innovation-X/source/master/serviceCreditMachine.json',
-  taxs:
-    'https://raw.githubusercontent.com/Box-Innovation-X/source/master/serviceTaxCredit.json',
+  main: 'https://my-json-server.typicode.com/arjdev69/jsonserver/',
 };
