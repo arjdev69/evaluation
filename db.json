@@ -1,0 +1,52 @@
+{
+  "lista": [
+    {
+      "id": 1,
+      "name": "Avaliação Serviço 1"
+    },
+    {
+      "id": 2,
+      "name": "Avaliação Serviço 1"
+    },
+    {
+      "id": 3,
+      "name": "Avaliação Serviço 1"
+    },
+    {
+      "id": 4,
+      "name": "Avaliação Serviço 1"
+    },
+    {
+      "id": 5,
+      "name": "Avaliação Serviço 1"
+    }
+  ],
+
+  "tasks": [
+    {
+      "city": "Salvador"
+    }
+  ]
+}
+
+
+/*
+
+- cidade (string) – Deverá compor o título da tela principal.
+- bairro (string) – Deverá compor o título da tela principal.
+- urlFoto (string) - URL da foto que deve ser apresentada logo abaixo da barra de navegação superior.
+- urlLogo (string) - URL do logo, deve ser apresentado centralizado dentro de um frame circular com fundo branco, à direita e abaixo da foto principal.
+- titulo (string) - Texto a ser colocado logo abaixo da foto na tela principal.
+- telefone (string) – Com DDD. Exemplo “5133332222”.
+- texto (string) – Texto da tela principal.
+- endereco (string) - Endereço a ser colocado logo abaixo do mapa.
+- latitude (number) - Latitude do ponto a ser colocado no mapa.
+- longitude (number) - Longitude do ponto a ser colocado no mapa.
+- comentarios (array de objects) - Lista de comentários, cada um contendo os campos:
+- urlFoto (string) - URL da foto do usuário.
+- nome (string) – Nome do usuário.
+- nota (number) - Número de 1 a 5.
+- titulo (string) - Título do comentário.
+- comentario (string) - Texto do comentário.
+
+*/
