@@ -5,6 +5,8 @@ import * as UI from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {getDetailPlace} from 'store/modules/Places/actions';
 
+import {DetailProduct} from 'templates';
+
 import Icon from 'react-native-vector-icons/Ionicons';
 import {COLORS} from 'styles';
 
@@ -45,11 +47,7 @@ const Products: React.FC<Props> = (_props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.id]);
 
-  return (
-    <UI.View>
-      <UI.Text>{data.name}</UI.Text>
-    </UI.View>
-  );
+  return <DetailProduct />;
 };
 
 export default Products;
