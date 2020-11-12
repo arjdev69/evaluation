@@ -1,8 +1,10 @@
 import * as React from 'react';
+
 import * as UI from 'react-native';
 
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createStackNavigator, HeaderBackButton} from '@react-navigation/stack';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import {Home, Products} from 'views';
 
@@ -36,8 +38,8 @@ const Routes: React.FC = () => {
         <Stack.Screen
           name="DetailProduct"
           component={Products}
-          options={{
-            title: 'Rota',
+          options={({navigation, route}) => ({
+            title: '',
             headerStyle: {
               backgroundColor: COLORS.primary,
               height: HP(SIZES.heightMenuMain),
@@ -45,11 +47,34 @@ const Routes: React.FC = () => {
             headerTintColor: COLORS.lightColor,
             headerTitleStyle: {
               fontWeight: '100',
-              fontSize: SIZES.titleMenu,
-              letterSpacing: SIZES.titleMenuSpacing,
+              fontSize: HP('2%'),
+              letterSpacing: 0.5,
               textAlign: 'center',
             },
-          }}
+            headerLeft: () => (
+              <HeaderBackButton
+                onPress={() => {
+                  navigation.navigate('ListTasks');
+                }}
+                backImage={() => (
+                  <Icon
+                    name="md-caret-back-sharp"
+                    size={20}
+                    color={COLORS.lightColor}
+                  />
+                )}
+              />
+            ),
+            headerRight: () => (
+              <UI.View style={{padding: 10}}>
+                <Icon
+                  name="ios-search-outline"
+                  size={20}
+                  color={COLORS.lightColor}
+                />
+              </UI.View>
+            ),
+          })}
         />
 
         <Stack.Screen
