@@ -5,7 +5,11 @@ import {getListTasks} from 'store/modules/Tasks/actions';
 
 import {ListItems} from 'templates';
 
-const Home: React.FC = ({navigation}) => {
+export interface Props {
+  navigation: any;
+}
+
+const Home: React.FC<Props> = (_props) => {
   const dispatch = useDispatch();
 
   const {loading, tasks} = useSelector((state: any) => state.Tasks);
@@ -25,7 +29,7 @@ const Home: React.FC = ({navigation}) => {
       loading={loading}
       columns={COLUMNS}
       fnCallback={(_item: any) => {
-        navigation.push('DetailProduct');
+        _props.navigation.push('DetailProduct', {data: _item});
       }}
     />
   );

@@ -4,22 +4,13 @@ import * as UI from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {Home} from 'views';
+import {Home, Products} from 'views';
 
 import {COLORS, SIZES, HP} from 'styles';
 
 const Stack = createStackNavigator();
 
 const Routes: React.FC = () => {
-  function Detail() {
-    return (
-      <UI.View
-        style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <UI.Text>Home Screen 2</UI.Text>
-      </UI.View>
-    );
-  }
-
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="ListTasks">
@@ -44,7 +35,7 @@ const Routes: React.FC = () => {
 
         <Stack.Screen
           name="DetailProduct"
-          component={Detail}
+          component={Products}
           options={{
             title: 'Rota',
             headerStyle: {
@@ -63,7 +54,7 @@ const Routes: React.FC = () => {
 
         <Stack.Screen
           name="Services"
-          component={Detail}
+          component={Products}
           options={{
             title: 'Rota',
             headerStyle: {
