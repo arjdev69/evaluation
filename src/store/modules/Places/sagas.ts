@@ -4,7 +4,7 @@ import {takeLatest, all, call, put} from 'redux-saga/effects';
 
 import api from 'services';
 
-import {setListTasks} from 'store/modules/Tasks/actions';
+import {setListTasks} from 'store/modules/Places/actions';
 
 export function* getListTasks() {
   try {

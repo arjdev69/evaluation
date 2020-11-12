@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 
 import {useDispatch, useSelector} from 'react-redux';
-import {getListTasks} from 'store/modules/Tasks/actions';
+import {getListTasks} from 'store/modules/Places/actions';
 
 import {ListItems} from 'templates';
 
@@ -12,7 +12,7 @@ export interface Props {
 const Home: React.FC<Props> = (_props) => {
   const dispatch = useDispatch();
 
-  const {loading, tasks} = useSelector((state: any) => state.Tasks);
+  const {loading, tasks} = useSelector((state: any) => state.Places);
 
   useEffect(() => {
     dispatch(getListTasks());
