@@ -2,10 +2,22 @@ import React from 'react';
 
 import {ViewImage, Box} from 'components';
 
-const BoxImage: React.FC = () => {
+export interface Props {
+  styles: {};
+  urlImgMain: string;
+  urlImgSecondary: string;
+}
+
+const BoxImage: React.FC<Props> = (_props) => {
   return (
     <Box styles={{}}>
-      <ViewImage />
+      <ViewImage
+        styles={{}}
+        stylesImage={{}}
+        stylesImgSecondary={{}}
+        urlImgMain={_props.urlImgMain}
+        urlImgSecondary={_props.urlImgSecondary}
+      />
     </Box>
   );
 };

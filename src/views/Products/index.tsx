@@ -47,7 +47,7 @@ const Products: React.FC<Props> = (_props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.id]);
 
-  return <DetailProduct />;
+  return <DetailProduct data={place} />;
 };
 
 export default Products;
