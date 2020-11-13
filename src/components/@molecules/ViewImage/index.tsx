@@ -25,10 +25,12 @@ const ViewImage: React.FC<Props> = (_props) => {
           source={{uri: _props.urlImgMain}}
         />
       </Box>
-      <UI.Image
-        style={[styles.imageSecondary, _props.stylesImgSecondary]}
-        source={{uri: _props.urlImgSecondary}}
-      />
+      <Box styles={[styles.boxImgSecondary]}>
+        <UI.Image
+          style={[styles.imageSecondary, _props.stylesImgSecondary]}
+          source={{uri: _props.urlImgSecondary}}
+        />
+      </Box>
     </Box>
   );
 };

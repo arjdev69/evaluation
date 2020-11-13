@@ -20,6 +20,9 @@ const Routes: React.FC = () => {
           name="ListTasks"
           component={Home}
           options={{
+            cardStyle: {
+              backgroundColor: COLORS.neutralLight,
+            },
             title: 'Evaluation',
             headerStyle: {
               backgroundColor: COLORS.primary,
@@ -38,7 +41,10 @@ const Routes: React.FC = () => {
         <Stack.Screen
           name="DetailProduct"
           component={Products}
-          options={({navigation, route}) => ({
+          options={({navigation}) => ({
+            cardStyle: {
+              backgroundColor: COLORS.neutralLight,
+            },
             title: '',
             headerStyle: {
               backgroundColor: COLORS.primary,

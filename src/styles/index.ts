@@ -22,7 +22,7 @@ export const COLORS = {
   secondaryTextDark: '#79492f',
   /*------*/
   neutral: '#f2f2f2',
-  neutralLight: '#c8c6c4',
+  neutralLight: '#f2f2f2',
   neutralDark: '#71706f',
   neutralText: '#f9f9f9',
   neutralTextLight: '#ffeded',
