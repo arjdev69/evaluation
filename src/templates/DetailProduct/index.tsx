@@ -1,5 +1,6 @@
-import {BoxImage} from 'components';
 import React from 'react';
+
+import {BoxImage, BoxInfo} from 'components';
 
 export interface Props {
   data: any;
@@ -7,11 +8,15 @@ export interface Props {
 
 const DetailProduct: React.FC<Props> = (_props) => {
   return (
-    <BoxImage
-      styles={{}}
-      urlImgMain={_props.data.urlFoto}
-      urlImgSecondary={_props.data.urlLogo}
-    />
+    <>
+      <BoxImage
+        styles={{}}
+        urlImgMain={_props.data.urlFoto}
+        urlImgSecondary={_props.data.urlLogo}
+        text={_props.data.title}
+      />
+      <BoxInfo />
+    </>
   );
 };
 
