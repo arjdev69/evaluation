@@ -10,7 +10,7 @@ export interface Props {
   activeOpacity: number;
 }
 
-const ButttonCustom: React.FC<Props> = (_props) => {
+const ButtonCustom: React.FC<Props> = (_props) => {
   return (
     <UI.TouchableOpacity
       {..._props}
@@ -26,4 +26,4 @@ const ButttonCustom: React.FC<Props> = (_props) => {
   );
 };
 
-export default ButttonCustom;
+export default ButtonCustom;

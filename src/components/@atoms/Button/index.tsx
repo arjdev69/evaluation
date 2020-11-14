@@ -27,27 +27,3 @@ const Button: React.FC<Props> = (props) => {
 };
 
 export default Button;
-// import React from 'react';
-// import {ActivityIndicator} from 'react-native';
-
-// import {Container, Text} from './styles';
-
-// export interface Props {
-//   children: String;
-//   loading: Boolean;
-//   rest: any;
-// }
-
-// const Button: React.FC<Props> = (props) => {
-//   return (
-//     <Container {...props.rest}>
-//       {props.loading ? (
-//         <ActivityIndicator size="small" color="#FFF" />
-//       ) : (
-//         <Text>{props.children}</Text>
-//       )}
-//     </Container>
-//   );
-// };
-
-// export default Button;
