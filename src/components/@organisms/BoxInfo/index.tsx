@@ -2,7 +2,7 @@ import React from 'react';
 
 import {useDispatch} from 'react-redux';
 
-import {openWebUrl} from 'utils';
+import {openWebUrl, copyToClipboard} from 'utils';
 import {setVisibleModal} from 'store/modules/Modal/actions';
 
 import {useNavigation} from '@react-navigation/native';
@@ -74,7 +74,7 @@ const BoxInfo: React.FC<Props> = (_props) => {
           styleBtn={{}}
           styleLabels={{}}
           onPress={() => {
-            console.log('COPIAR');
+            copyToClipboard(_props.data.address);
           }}
         />
       </AddressModal>

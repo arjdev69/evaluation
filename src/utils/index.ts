@@ -1,5 +1,6 @@
-import AsyncStorage from '@react-native-community/async-storage';
 import {Alert, Linking} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
+import Clipboard from '@react-native-community/clipboard';
 
 export const openWebUrl = async (url: string) => {
   const supported = await Linking.canOpenURL(url);
@@ -35,4 +36,13 @@ export const asyncFetch = async (_url: RequestInfo) => {
     .catch((error) => {
       console.error(error);
     });
+};
+
+export const copyToClipboard = (_item: string) => {
+  Clipboard.setString(_item);
+};
+
+export const fetchCopiedText = async () => {
+  const text = await Clipboard.getString();
+  return text;
 };
