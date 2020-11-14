@@ -1,9 +1,13 @@
 import React from 'react';
 
-import {ViewInfo} from 'components/@molecules';
+import {openWebUrl} from 'utils';
+
+import {useNavigation} from '@react-navigation/native';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconFw from 'react-native-vector-icons/FontAwesome';
+
+import {ViewInfo} from 'components/@molecules';
 
 import {COLORS} from 'styles';
 
@@ -12,19 +16,20 @@ export interface Props {
 }
 
 const BoxInfo: React.FC<Props> = (_props) => {
+  const route = useNavigation();
   const buttons = [
     {
       icon: <Icon name="ios-call" size={24} color={COLORS.primary} />,
       label: 'Ligar',
       press: () => {
-        console.log('press ligar');
+        openWebUrl(`tel:${_props.data.phone}`);
       },
     },
     {
       icon: <IconFw name="diamond" size={24} color={COLORS.primary} />,
       label: 'Serviços',
       press: () => {
-        console.log('press Serviços');
+        route.navigate('Services');
       },
     },
     {

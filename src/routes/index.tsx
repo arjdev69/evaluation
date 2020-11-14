@@ -6,7 +6,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator, HeaderBackButton} from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import {Home, Products} from 'views';
+import {Home, Products, Services} from 'views';
 
 import {COLORS, SIZES, HP} from 'styles';
 
@@ -85,9 +85,23 @@ const Routes: React.FC = () => {
 
         <Stack.Screen
           name="Services"
-          component={Products}
-          options={{
-            title: 'Rota',
+          component={Services}
+          options={({navigation}) => ({
+            title: 'Serviços',
+            headerLeft: () => (
+              <HeaderBackButton
+                onPress={() => {
+                  navigation.navigate('DetailProduct');
+                }}
+                backImage={() => (
+                  <Icon
+                    name="md-caret-back-sharp"
+                    size={20}
+                    color={COLORS.lightColor}
+                  />
+                )}
+              />
+            ),
             headerStyle: {
               backgroundColor: COLORS.primary,
               height: HP(SIZES.heightMenuMain),
@@ -99,7 +113,7 @@ const Routes: React.FC = () => {
               letterSpacing: SIZES.titleMenuSpacing,
               textAlign: 'center',
             },
-          }}
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>

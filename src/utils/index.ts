@@ -1,15 +1,7 @@
 import AsyncStorage from '@react-native-community/async-storage';
 import {Alert, Linking} from 'react-native';
 
-export const openWebUrl = async (
-  country: string,
-  numberPhone: string,
-  message: any,
-) => {
-  const url = `https://api.whatsapp.com/send?phone=${
-    country + '' + '' + numberPhone
-  }&text=${message}`;
-
+export const openWebUrl = async (url: string) => {
   const supported = await Linking.canOpenURL(url);
 
   if (supported) {
@@ -19,10 +11,10 @@ export const openWebUrl = async (
   }
 };
 
-export const removePost = async (number: any) => {
+export const removeItem = async (number: any) => {
   try {
-    const posts = await AsyncStorage.getItem('list');
-    let postsFav = JSON.parse(posts);
+    const items = await AsyncStorage.getItem('list');
+    let postsFav = JSON.parse(items);
     const postsItems = postsFav.filter(function (e: {number: any}) {
       return e.number !== number;
     });

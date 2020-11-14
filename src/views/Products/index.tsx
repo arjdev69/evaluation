@@ -45,6 +45,7 @@ const Products: React.FC<Props> = (_props) => {
 
   React.useEffect(() => {
     getDetailPlaces();
+    console.log(loading);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.id]);
 
