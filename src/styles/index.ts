@@ -8,7 +8,7 @@ export const HP = hp;
 
 export const COLORS = {
   primary: '#e09400',
-  primaryLight: '#666667',
+  primaryLight: '#e7e7e7',
   primaryDark: '#262321',
   primaryText: '#C5C4C9',
   primaryTextDark: '#7D7C82',

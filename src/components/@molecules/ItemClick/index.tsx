@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {Box, Label} from 'components';
-import {ButttonCustom} from 'components/@atoms';
+import {ButtonCustom} from 'components/@atoms';
 
 import {styles} from './styles';
 
@@ -20,7 +20,7 @@ const ItemClick: React.FC<Props> = (_props) => {
       {_props.children ? (
         _props.children
       ) : (
-        <ButttonCustom
+        <ButtonCustom
           loading={false}
           activeOpacity={0.6}
           onPress={_props.fnCallback}
@@ -28,7 +28,7 @@ const ItemClick: React.FC<Props> = (_props) => {
           <Label style={[styles.labelBtn, _props.stylesLabel]}>
             {_props.label}
           </Label>
-        </ButttonCustom>
+        </ButtonCustom>
       )}
     </Box>
   );

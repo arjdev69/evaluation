@@ -1,6 +1,7 @@
 import React from 'react';
 
 import * as UI from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
 import {useDispatch, useSelector} from 'react-redux';
 import {getDetailPlace} from 'store/modules/Places/actions';
@@ -47,7 +48,11 @@ const Products: React.FC<Props> = (_props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data.id]);
 
-  return <DetailProduct data={place} />;
+  return (
+    <ScrollView>
+      <DetailProduct data={place} />
+    </ScrollView>
+  );
 };
 
 export default Products;

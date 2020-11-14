@@ -4,7 +4,7 @@ export {
   Button,
   Input,
   Loading,
-  ButttonCustom,
+  ButtonCustom,
 } from 'components/@atoms';
 
 export {ItemClick, ModalComp, ViewImage, ViewInfo} from 'components/@molecules';

@@ -15,7 +15,7 @@ const DetailProduct: React.FC<Props> = (_props) => {
         urlImgSecondary={_props.data.urlLogo}
         text={_props.data.title}
       />
-      <BoxInfo />
+      <BoxInfo data={_props.data} />
     </>
   );
 };
