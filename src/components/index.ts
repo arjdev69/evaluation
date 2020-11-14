@@ -7,10 +7,16 @@ export {
   ButtonCustom,
 } from 'components/@atoms';
 
-export {ItemClick, ModalComp, ViewImage, ViewInfo} from 'components/@molecules';
+export {
+  ItemClick,
+  ModalComp,
+  ViewImage,
+  ViewInfo,
+  InfoData,
+} from 'components/@molecules';
 
 export {
-  ListModalMachine,
+  AddressModal,
   ListObjects,
   BoxImage,
   BoxInfo,

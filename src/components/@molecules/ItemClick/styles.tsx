@@ -1,4 +1,4 @@
-import {darken, lighten} from 'polished';
+import {lighten} from 'polished';
 import {StyleSheet} from 'react-native';
 
 import styled from 'styled-components/native';

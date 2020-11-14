@@ -5,8 +5,6 @@ import {useSelector, useDispatch} from 'react-redux';
 
 import {setVisibleModal} from 'store/modules/Modal/actions';
 
-import {screenCalculatorLabel} from 'utils/Constants';
-
 import {styles} from './styles';
 export interface Props {
   name: string;
@@ -16,6 +14,8 @@ export interface Props {
   animationType: any;
   stylesModal: {};
   stylesIcon: {};
+  label: string;
+  viewBtn: boolean;
 }
 
 const ModalComp: React.FC<Props> = (_props) => {
@@ -57,21 +57,21 @@ const ModalComp: React.FC<Props> = (_props) => {
           </UI.TouchableOpacity>
         </UI.View>
       </UI.Modal>
-      <UI.TouchableOpacity
-        style={styles.openButton}
-        onPress={() => {
-          setModalVisible(_props.name, true);
-        }}>
-        <UI.View style={styles.boxImage}>
-          <UI.Image
-            style={[styles.stretch, _props.stylesIcon]}
-            source={_props.icon}
-          />
-          <UI.Text style={styles.textStyle}>
-            {screenCalculatorLabel.labelMachine}
-          </UI.Text>
-        </UI.View>
-      </UI.TouchableOpacity>
+      {_props.viewBtn && (
+        <UI.TouchableOpacity
+          style={styles.openButton}
+          onPress={() => {
+            setModalVisible(_props.name, true);
+          }}>
+          <UI.View style={styles.boxImage}>
+            <UI.Image
+              style={[styles.stretch, _props.stylesIcon]}
+              source={_props.icon}
+            />
+            <UI.Text style={styles.textStyle}>{_props.label}</UI.Text>
+          </UI.View>
+        </UI.TouchableOpacity>
+      )}
     </UI.View>
   );
 };
