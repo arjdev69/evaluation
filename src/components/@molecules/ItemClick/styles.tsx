@@ -3,13 +3,13 @@ import {StyleSheet} from 'react-native';
 
 import styled from 'styled-components/native';
 
-import {COLORS, HP, SIZES, WP} from 'styles';
+import {COLORS, SIZES} from 'styles';
 
 export const Container = styled.View``;
 
 export const styles = StyleSheet.create({
   boxListItem: {
-    width: WP('100%'),
+    width: '100%',
     padding: 10,
     justifyContent: 'flex-start',
   },
