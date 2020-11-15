@@ -1,17 +1,19 @@
 import React, {useCallback} from 'react';
 
-import * as UI from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
-
 import {useDispatch, useSelector} from 'react-redux';
 import {getDetailPlace} from 'store/modules/Places/actions';
+import _ from 'lodash';
+
+import * as UI from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
 import {DetailProduct} from 'templates';
 
 import Icon from 'react-native-vector-icons/Ionicons';
-import {COLORS} from 'styles';
+import {Loading, NotFound} from 'components';
 
 import {styles} from './styles';
+import {COLORS} from 'styles';
 
 export interface Props {
   route: any;
@@ -28,15 +30,17 @@ const Products: React.FC<Props> = (_props) => {
   }, [dispatch, data.id]);
 
   React.useLayoutEffect(() => {
+    console.log(place);
     if (place) {
       _props.navigation.setOptions({
         headerTitle: () => (
           <UI.View style={styles.headerTitle}>
             <Icon name="ios-location" size={30} color={COLORS.lightColor} />
-            <UI.Text
-              style={
-                styles.headerText
-              }>{`${place.city} - ${place.district}`}</UI.Text>
+            <UI.Text style={styles.headerText}>
+              {!_.isEmpty(place)
+                ? `${place.city} - ${place.district}`
+                : 'Nenhum registro encontrado.'}
+            </UI.Text>
           </UI.View>
         ),
       });
@@ -49,7 +53,18 @@ const Products: React.FC<Props> = (_props) => {
 
   return (
     <ScrollView>
-      <DetailProduct data={place} />
+      {loading && (
+        <Loading
+          size={'large'}
+          color={COLORS.primary}
+          styles={styles.loading}
+        />
+      )}
+      {!_.isEmpty(place) ? (
+        <DetailProduct data={place} />
+      ) : (
+        <NotFound message={'Nenhum dados encontrados...'} />
+      )}
     </ScrollView>
   );
 };

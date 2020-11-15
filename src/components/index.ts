@@ -16,6 +16,7 @@ export {
   InfoData,
   ViewMaps,
   ViewComments,
+  NotFound,
 } from 'components/@molecules';
 
 export {

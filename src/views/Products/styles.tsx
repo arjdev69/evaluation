@@ -17,4 +17,13 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     marginLeft: 8,
   },
+  loading: {
+    position: 'absolute',
+    zIndex: 1,
+    height: '100%',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: COLORS.transparentLoadColor,
+  },
 });
