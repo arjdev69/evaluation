@@ -17,7 +17,7 @@ export const styles = StyleSheet.create({
     backgroundColor: lighten(0.1, COLORS.neutralLight),
     borderRadius: SIZES.bdRadius,
     justifyContent: 'flex-start',
-    padding: 8,
+    padding: 40,
     borderWidth: 0.5,
     borderColor: lighten(0.1, COLORS.darkColor),
   },

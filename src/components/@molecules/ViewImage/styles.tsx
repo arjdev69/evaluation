@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
   image: {
     flex: 1,
     width: '100%',
+    resizeMode: 'stretch',
   },
   boxImgSecondary: {
     position: 'absolute',
@@ -35,9 +36,9 @@ export const styles = StyleSheet.create({
     borderColor: COLORS.transparentDarkColor,
   },
   imageSecondary: {
-    height: 64,
-    width: 64,
-    borderRadius: 40,
-    padding: 15,
+    height: 50,
+    width: 50,
+    borderRadius: 60,
+    resizeMode: 'contain',
   },
 });
