@@ -1,26 +1,22 @@
 import produce from 'immer';
 
 const INITIAL_STATE = {
-  visible: {
-    modal_machines: false,
-  },
+  scrollControl: 0,
 };
 
-export default function modal(
+export default function scroll(
   state = INITIAL_STATE,
   action: {
     type: any;
     payload: {
-      visible: {
-        modal_machines: false;
-      };
+      scrollControl: number;
     };
   },
 ) {
   return produce(state, (draft) => {
     switch (action.type) {
-      case '@UPDATE_VALUE/VISIBLE_MODAL': {
-        draft.visible = action.payload.visible;
+      case '@UPDATE_VALUE/SET_SCROLL': {
+        draft.scrollControl = action.payload.scrollControl;
         break;
       }
       default:

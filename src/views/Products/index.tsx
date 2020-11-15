@@ -1,11 +1,10 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useEffect, useLayoutEffect, useRef} from 'react';
 
 import {useDispatch, useSelector} from 'react-redux';
 import {getDetailPlace} from 'store/modules/Places/actions';
 import _ from 'lodash';
 
 import * as UI from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
 
 import {DetailProduct} from 'templates';
 
@@ -23,14 +22,22 @@ export interface Props {
 const Products: React.FC<Props> = (_props) => {
   const {data} = _props.route.params;
   const dispatch = useDispatch();
+  const scrollRef = useRef();
   const {loading, place} = useSelector((state: any) => state.Places);
+  const {scrollControl} = useSelector((state: any) => state.Scroll);
 
   const getDetailPlaces = useCallback(() => {
     dispatch(getDetailPlace(data.id));
   }, [dispatch, data.id]);
 
-  React.useLayoutEffect(() => {
-    console.log(place);
+  const onPressTouch = (_val: number) => {
+    scrollRef.current?.scrollTo({
+      y: _val,
+      animated: true,
+    });
+  };
+
+  useLayoutEffect(() => {
     if (place) {
       _props.navigation.setOptions({
         headerTitle: () => (
@@ -47,12 +54,16 @@ const Products: React.FC<Props> = (_props) => {
     }
   }, [_props.navigation, place]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     getDetailPlaces();
   }, [data.id, getDetailPlaces]);
 
+  useEffect(() => {
+    onPressTouch(scrollControl);
+  }, [dispatch, scrollControl]);
+
   return (
-    <ScrollView>
+    <UI.ScrollView ref={scrollRef}>
       {loading && (
         <Loading
           size={'large'}
@@ -65,7 +76,7 @@ const Products: React.FC<Props> = (_props) => {
       ) : (
         <NotFound message={'Nenhum dados encontrados...'} />
       )}
-    </ScrollView>
+    </UI.ScrollView>
   );
 };
 

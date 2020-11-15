@@ -1,9 +1,10 @@
 import React from 'react';
 
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
 import {openWebUrl, copyToClipboard} from 'utils';
 import {setVisibleModal} from 'store/modules/Modal/actions';
+import {setScrollRef} from 'store/modules/ScrollControl/actions';
 
 import {useNavigation} from '@react-navigation/native';
 
@@ -26,9 +27,15 @@ export interface Props {
 const BoxInfo: React.FC<Props> = (_props) => {
   const route = useNavigation();
   const dispatch = useDispatch();
+  const {scrollControl} = useSelector((state: any) => state.Scroll);
 
   const setModalVisible = (params: Boolean) => {
     dispatch(setVisibleModal({['address']: params}));
+  };
+
+  const moveScroll = () => {
+    const move = scrollControl > 0 ? scrollControl + 1 : 9990;
+    dispatch(setScrollRef(move));
   };
 
   const buttons = [
@@ -57,7 +64,7 @@ const BoxInfo: React.FC<Props> = (_props) => {
       icon: <IconFw name="comments" size={24} color={COLORS.primary} />,
       label: 'Comentários',
       press: () => {
-        console.log('press Comentários');
+        moveScroll();
       },
     },
     {
