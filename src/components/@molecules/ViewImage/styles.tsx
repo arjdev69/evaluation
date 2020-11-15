@@ -31,8 +31,8 @@ export const styles = StyleSheet.create({
     borderRadius: 150,
     padding: 50,
     margin: 10,
-    borderWidth: 0.1,
-    borderColor: COLORS.darkColor,
+    borderWidth: 0.2,
+    borderColor: COLORS.transparentDarkColor,
   },
   imageSecondary: {
     height: 64,

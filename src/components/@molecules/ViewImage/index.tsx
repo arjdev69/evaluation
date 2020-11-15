@@ -2,8 +2,6 @@ import React from 'react';
 
 import * as UI from 'react-native';
 
-import {ICON_NONE} from 'utils/images';
-
 import {Box} from 'components';
 
 import {styles} from './styles';
