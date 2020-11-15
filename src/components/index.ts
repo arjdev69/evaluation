@@ -5,6 +5,7 @@ export {
   Input,
   Loading,
   ButtonCustom,
+  ImageLoad,
 } from 'components/@atoms';
 
 export {
@@ -14,6 +15,7 @@ export {
   ViewInfo,
   InfoData,
   ViewMaps,
+  ViewComments,
 } from 'components/@molecules';
 
 export {

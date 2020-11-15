@@ -11,7 +11,7 @@ export const styles = StyleSheet.create({
     backgroundColor: COLORS.lightColor,
     padding: 10,
     paddingTop: 0,
-    paddingBottom: 15,
+    paddingBottom: 0,
     paddingLeft: 0,
     paddingRight: 0,
   },

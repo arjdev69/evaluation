@@ -10,7 +10,13 @@ import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconFw from 'react-native-vector-icons/FontAwesome';
 
-import {ViewInfo, AddressModal, InfoData, ViewMaps} from 'components';
+import {
+  ViewInfo,
+  AddressModal,
+  InfoData,
+  ViewMaps,
+  ViewComments,
+} from 'components';
 
 import {COLORS} from 'styles';
 export interface Props {
@@ -94,6 +100,31 @@ const BoxInfo: React.FC<Props> = (_props) => {
         description={_props.data.city}
         address={_props.data.street}
       />
+      {_props.data.comments.map(
+        (
+          comment: {
+            urlPhoto: any;
+            comment: string;
+            user: string;
+            title: string;
+            name: string;
+            note: number;
+          },
+          ict: string | number | null | undefined,
+        ) => (
+          <ViewComments
+            key={ict}
+            styles={{}}
+            stylesImg={{}}
+            url={{uri: comment.urlPhoto}}
+            urlLoad={{uri: comment.urlPhoto}}
+            user={comment.name}
+            title={comment.title}
+            comments={comment.comment}
+            note={comment.note}
+          />
+        ),
+      )}
     </>
   );
 };

@@ -39,13 +39,13 @@ export const styles = StyleSheet.create({
   label: {
     color: COLORS.primary,
     fontWeight: 'bold',
-    fontSize: HP('1.6%'),
+    fontSize: HP('1.5%'),
     letterSpacing: 1,
     marginTop: 5,
   },
   description: {
     fontWeight: 'normal',
-    fontSize: HP('2.2%'),
+    fontSize: HP('2%'),
     letterSpacing: 1,
     textAlign: 'justify',
   },

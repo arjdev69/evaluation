@@ -9,7 +9,7 @@ export const WP = wp;
 export const HP = hp;
 
 export const COLORS = {
-  primary: lighten(0.15, '#e09400'),
+  primary: lighten(0.001, '#e09400'),
   primaryLight: '#e7e7e7',
   primaryDark: '#262321',
   primaryText: '#C5C4C9',
