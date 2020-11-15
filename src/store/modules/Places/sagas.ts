@@ -20,12 +20,12 @@ export function* getListTasks() {
 }
 
 export function* getDetailPlace({payload}) {
-  //console.log(payload);
   try {
-    const resp = yield call(api.get, `places/${1}`);
+    const resp = yield call(api.get, `places/${payload._id}`);
 
     yield put(setDetailPlace(resp.data));
   } catch (err) {
+    yield put(setDetailPlace([]));
     Alert.alert(
       'Falha na requisição',
       'Houve um erro no retorno dos dados, envie um e-mail',

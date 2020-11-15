@@ -7,6 +7,9 @@ import {COLORS} from 'styles';
 export const Container = styled.View``;
 
 export const styles = StyleSheet.create({
+  box: {
+    flex: 1,
+  },
   loading: {
     position: 'absolute',
     zIndex: 1,
@@ -14,6 +17,6 @@ export const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: COLORS.transparentLightColor,
+    backgroundColor: COLORS.transparentDarkColor,
   },
 });

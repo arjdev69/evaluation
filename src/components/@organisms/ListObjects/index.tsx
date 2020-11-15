@@ -18,15 +18,16 @@ const ListObjects: React.FC<Props> = (_props) => {
   const [load, setLoad] = useState(false);
 
   return (
-    <Box styles={{}}>
-      <ScrollView>
-        {_props.loading || load ? (
+    <Box styles={styles.box}>
+      {_props.loading ||
+        (load && (
           <Loading
             size={'large'}
             color={COLORS.primary}
             styles={styles.loading}
           />
-        ) : null}
+        ))}
+      <ScrollView>
         {_props.data.map(
           (_item: any, _idx: string | number | null | undefined) => (
             <ItemClick
@@ -41,7 +42,7 @@ const ListObjects: React.FC<Props> = (_props) => {
                 setTimeout(() => {
                   setLoad(false);
                   _props.fnCallback(_item);
-                }, 1500);
+                }, 600);
               }}
             />
           ),
