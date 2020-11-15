@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import MapView, {PROVIDER_GOOGLE, Marker} from 'react-native-maps';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import {Box, Label} from 'components';
+import {Box, Label, ButtonCustom} from 'components';
 
 import {styles} from './styles';
 import {COLORS} from 'styles';
@@ -17,6 +17,8 @@ export interface Props {
 }
 
 const ViewMaps: React.FC<Props> = (_props) => {
+  const [latLang, setLatLang] = useState({latDelta: 0.02, longDelta: 0});
+
   return (
     <Box styles={styles.gridInfo}>
       <MapView
@@ -26,8 +28,8 @@ const ViewMaps: React.FC<Props> = (_props) => {
         region={{
           latitude: _props.latLang.latitude,
           longitude: _props.latLang.longitude,
-          latitudeDelta: 0.02,
-          longitudeDelta: 0,
+          latitudeDelta: latLang.latDelta,
+          longitudeDelta: latLang.longDelta,
         }}>
         <Marker
           key={'marker'}
@@ -41,9 +43,15 @@ const ViewMaps: React.FC<Props> = (_props) => {
       </MapView>
       <Box styles={styles.boxAddressInfo}>
         <Label style={styles.labelAddress}>{_props.address}</Label>
-        <Box styles={[styles.iconLocation]}>
+        <ButtonCustom
+          loading={false}
+          activeOpacity={0.6}
+          onPress={() => {
+            setLatLang({latDelta: 0.02, longDelta: 0});
+          }}
+          style={[styles.iconLocation]}>
           <Icon name="location" size={24} color={COLORS.primary} />
-        </Box>
+        </ButtonCustom>
       </Box>
     </Box>
   );
