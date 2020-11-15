@@ -85,7 +85,15 @@ const BoxInfo: React.FC<Props> = (_props) => {
         loading={false}
         description={_props.data.text}
       />
-      <ViewMaps />
+      <ViewMaps
+        latLang={{
+          latitude: _props.data.lat,
+          longitude: _props.data.long,
+        }}
+        title={_props.data.title}
+        description={_props.data.city}
+        address={_props.data.street}
+      />
     </>
   );
 };

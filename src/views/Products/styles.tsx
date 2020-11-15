@@ -15,5 +15,6 @@ export const styles = StyleSheet.create({
   headerText: {
     color: COLORS.lightColor,
     fontSize: 16,
+    marginLeft: 8,
   },
 });

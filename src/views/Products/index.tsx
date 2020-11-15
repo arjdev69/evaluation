@@ -27,7 +27,7 @@ const Products: React.FC<Props> = (_props) => {
     dispatch(getDetailPlace(data.id));
   }, [dispatch, data.id]);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (place) {
       _props.navigation.setOptions({
         headerTitle: () => (
@@ -41,8 +41,11 @@ const Products: React.FC<Props> = (_props) => {
         ),
       });
     }
+  }, [_props.navigation, place]);
+
+  React.useEffect(() => {
     getDetailPlaces();
-  }, [_props.navigation, place, getDetailPlaces]);
+  }, [data.id, getDetailPlaces]);
 
   return (
     <ScrollView>
