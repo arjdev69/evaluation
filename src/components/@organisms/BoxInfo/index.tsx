@@ -10,7 +10,7 @@ import {useNavigation} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import IconFw from 'react-native-vector-icons/FontAwesome';
 
-import {ViewInfo, AddressModal, InfoData} from 'components';
+import {ViewInfo, AddressModal, InfoData, ViewMaps} from 'components';
 
 import {COLORS} from 'styles';
 export interface Props {
@@ -85,6 +85,7 @@ const BoxInfo: React.FC<Props> = (_props) => {
         loading={false}
         description={_props.data.text}
       />
+      <ViewMaps />
     </>
   );
 };

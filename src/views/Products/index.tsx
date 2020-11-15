@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 
 import * as UI from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -23,11 +23,11 @@ const Products: React.FC<Props> = (_props) => {
   const dispatch = useDispatch();
   const {loading, place} = useSelector((state: any) => state.Places);
 
-  const getDetailPlaces = () => {
+  const getDetailPlaces = useCallback(() => {
     dispatch(getDetailPlace(data.id));
-  };
+  }, [dispatch, data.id]);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     if (place) {
       _props.navigation.setOptions({
         headerTitle: () => (
@@ -41,13 +41,8 @@ const Products: React.FC<Props> = (_props) => {
         ),
       });
     }
-  }, [_props.navigation, place]);
-
-  React.useEffect(() => {
     getDetailPlaces();
-    console.log(loading);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data.id]);
+  }, [_props.navigation, place, getDetailPlaces]);
 
   return (
     <ScrollView>

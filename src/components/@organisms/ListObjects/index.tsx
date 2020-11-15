@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import {ScrollView} from 'react-native-gesture-handler';
 
@@ -15,10 +15,12 @@ export interface Props {
 }
 
 const ListObjects: React.FC<Props> = (_props) => {
+  const [load, setLoad] = useState(false);
+
   return (
     <Box styles={{}}>
       <ScrollView>
-        {_props.loading ? (
+        {_props.loading || load ? (
           <Loading
             size={'large'}
             color={COLORS.primary}
@@ -35,7 +37,11 @@ const ListObjects: React.FC<Props> = (_props) => {
               label={_item[_props.columns.name]}
               children={false}
               fnCallback={() => {
-                _props.fnCallback(_item);
+                setLoad(true);
+                setTimeout(() => {
+                  setLoad(false);
+                  _props.fnCallback(_item);
+                }, 1500);
               }}
             />
           ),

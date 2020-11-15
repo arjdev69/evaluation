@@ -13,6 +13,7 @@ export {
   ViewImage,
   ViewInfo,
   InfoData,
+  ViewMaps,
 } from 'components/@molecules';
 
 export {
