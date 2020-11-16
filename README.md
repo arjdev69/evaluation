@@ -8,4 +8,4 @@
 
 ### APK
 
-![APK](https://github.com/arjdev69/evaluation/blob/master/android/app/release/app-release.apk)
+![APK](https://github.com/arjdev69/evaluation/blob/master/android/app/release/app-release.apk?raw=true)
