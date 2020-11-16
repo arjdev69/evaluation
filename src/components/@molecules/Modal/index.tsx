@@ -35,7 +35,7 @@ const ModalComp: React.FC<Props> = (_props) => {
     <UI.View>
       <UI.Modal
         {..._props}
-        visible={visible[_props.name]}
+        visible={visible[_props.name] ? visible[_props.name] : false}
         onDismiss={() => {
           setModalVisible(_props.name, false);
         }}>

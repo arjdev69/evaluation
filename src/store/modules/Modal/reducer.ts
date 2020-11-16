@@ -2,7 +2,7 @@ import produce from 'immer';
 
 const INITIAL_STATE = {
   visible: {
-    modal_machines: false,
+    modal: false,
   },
 };
 
@@ -12,7 +12,7 @@ export default function modal(
     type: any;
     payload: {
       visible: {
-        modal_machines: false;
+        modal: false;
       };
     };
   },
